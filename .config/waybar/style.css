@@ -10,6 +10,8 @@
  * Keyframes
  * -------------------------------------------------------------------------- */
 
+@import "macchiato.css";
+
 @keyframes blink-warning {
     70% {
         color: white;
@@ -48,7 +50,8 @@
 
 /* The whole bar */
 #waybar {
-    background: #323232;
+    background-color: shade(@base, 0.9);
+    border: 2px solid alpha(@crust, 0.3);
     color: white;
     font-family: Cantarell, Noto Sans, sans-serif;
     font-size: 13px;

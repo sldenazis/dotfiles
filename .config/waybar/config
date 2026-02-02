@@ -64,6 +64,7 @@
     },
 
     "clock#time": {
+    	"timezone": "America/Argentina/Buenos_Aires",
         "interval": 1,
         "format": "{:%H:%M:%S}",
         "tooltip": false
