@@ -77,18 +77,23 @@
  * Module styles
  * -------------------------------------------------------------------------- */
 
+#custom-keyboard-layout {
+    color: @pink;
+}
+
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    color: @green;
 }
 
 #battery.warning {
-    color: orange;
+    color: @yellow;
 }
 
 #battery.critical {
-    color: red;
+    color: @red;
 }
 
 #battery.warning.discharging {
@@ -103,32 +108,34 @@
 
 #clock {
     font-weight: bold;
+    color: @sapphire;
 }
 
 #cpu {
-  /* No styles */
+    color: @maroon;
 }
 
 #cpu.warning {
-    color: orange;
+    color: @yellow;
 }
 
 #cpu.critical {
-    color: red;
+    color: @red;
 }
 
 #memory {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    color: @lavender;
 }
 
 #memory.warning {
-    color: orange;
+    color: @yellow;
 }
 
 #memory.critical {
-    color: red;
+    color: @red;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
@@ -145,7 +152,7 @@
 }
 
 #network.disconnected {
-    color: orange;
+    color: @red;
 }
 
 #pulseaudio {
@@ -154,6 +161,7 @@
 
 #pulseaudio.muted {
     /* No styles */
+    color: @red;
 }
 
 #custom-spotify {
@@ -162,10 +170,11 @@
 
 #temperature {
     /* No styles */
+    color: @rosewater;
 }
 
 #temperature.critical {
-    color: red;
+    color: @red;
 }
 
 #tray {
@@ -182,13 +191,15 @@
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #888888;
+    /*color: #888888;*/
+    color: @rosewater;
 }
 
 #workspaces button.focused {
     border-color: #4c7899;
-    color: white;
-    background-color: #285577;
+    color: @blue;
+    /*background-color: #285577;*/
+    background-color: @lavender;
 }
 
 #workspaces button.urgent {

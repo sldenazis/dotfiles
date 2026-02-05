@@ -20,22 +20,25 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/mode"
+        "hyprland/window"
+        //"hyprland/mode"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock#date",
+        "clock#time"
     ],
     "modules-right": [
         "network",
         "memory",
         "cpu",
         "temperature",
+	"pulseaudio",
         //"custom/keyboard-layout",
-	"hyprland/language",
+	//"hyprland/language",
         "battery",
-        "tray",
-        "clock#date",
-        "clock#time"
+        "tray"
+        //"clock#date",
+        //"clock#time"
     ],
 
 
@@ -66,14 +69,16 @@
     "clock#time": {
     	"timezone": "America/Argentina/Buenos_Aires",
         "interval": 1,
-        "format": "{:%H:%M:%S}",
+        "format": "{:%H:%M}",
         "tooltip": false
     },
 
     "clock#date": {
       "interval": 10,
-      "format": "  {:%e %b %Y}", // Icon: calendar-alt
-      "tooltip-format": "{:%e %B %Y}"
+      "format": "  {:%e %b}", // Icon: calendar-alt
+      "tooltip-format": "{:%e %B}"
+      //"format": "  {:%e %b %Y}", // Icon: calendar-alt
+      //"tooltip-format": "{:%e %B %Y}"
     },
 
     "cpu": {
@@ -111,25 +116,26 @@
         }
     },
 
-    //"network": {
-    //    "interval": 5,
-    //    "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-    //    "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-    //    "format-disconnected": "⚠  Disconnected",
-    //    "tooltip-format": "{ifname}: {ipaddr}"
-    //},
-
     "network": {
-        "format": "{ifname}",
-        "format-wifi": " ",
-        "format-ethernet": " ",
-        "format-disconnected": " ", //An empty format will hide the module.
-        "tooltip-format": " {ifname} via {gwaddr}",
-        "tooltip-format-wifi": " {essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
+        "interval": 5,
+        "format-wifi": "   {essid} {signalStrength}%", // Icon: wifi
+        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "  ", //An empty format will hide the module.
+        "on-click": "nm-connection-editor",
+        "tooltip-format": "{ifname}: {ipaddr}"
     },
+
+    //"network": {
+    //    "format": "{ifname}",
+    //    "format-wifi": " ",
+    //    "format-ethernet": " ",
+    //    "format-disconnected": " ", //An empty format will hide the module.
+    //    "tooltip-format": " {ifname} via {gwaddr}",
+    //    "tooltip-format-wifi": " {essid} ({signalStrength}%)",
+    //    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    //    "tooltip-format-disconnected": "Disconnected",
+    //    "max-length": 50
+    //},
 
     "hyprland/mode": {
         "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
@@ -153,26 +159,25 @@
             "5:portal": "", // Icon: terminal
             "urgent": "",
             "focused": "",
-            "default": ""
+            "default": " "
         }
     },
 
-    //"pulseaudio": {
-    //    //"scroll-step": 1,
-    //    "format": "{icon}  {volume}%",
-    //    "format-bluetooth": "{icon}  {volume}%",
-    //    "format-muted": "",
-    //    "format-icons": {
-    //        "headphones": "",
-    //        "handsfree": "",
-    //        "headset": "",
-    //        "phone": "",
-    //        "portable": "",
-    //        "car": "",
-    //        "default": ["", ""]
-    //    },
-    //    "on-click": "pavucontrol"
-    //},
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        }
+    },
 
     "temperature": {
       "critical-threshold": 80,
@@ -189,7 +194,7 @@
     },
 
     "tray": {
-        "icon-size": 21,
+        "icon-size": 16,
         "spacing": 10
     }
 
